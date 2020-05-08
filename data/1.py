@@ -1,0 +1,52 @@
+class_name_list = []
+f = open('train.txt', 'r', encoding='utf-8')
+fp = open('new_train.txt', 'w', encoding='utf-8')
+line = f.readline()
+while line:
+    line = line.rstrip()
+    temp_list = line.split('__label__')
+    tt = temp_list[0].strip().split(' ')
+    data = ''.join(tt)
+    # print(data)
+    # print(temp_list)
+    class_name = temp_list[1].strip()
+
+    if class_name not in class_name_list:
+        class_name_list.append(class_name)
+    class_name_index = class_name_list.index(class_name)
+    print(str(class_name_index) + '\t' + data, file=fp)
+    line = f.readline()
+f.close()
+fp.close()
+print(len(class_name_list))
+
+
+f = open('test.txt', 'r', encoding='utf-8')
+fp = open('new_test.txt', 'w', encoding='utf-8')
+line = f.readline()
+while line:
+    line = line.rstrip()
+    temp_list = line.split('__label__')
+    tt = temp_list[0].strip().split(' ')
+    data = ''.join(tt)
+    class_name = temp_list[1].strip()
+    class_name_index = class_name_list.index(class_name)
+    print(str(class_name_index) + '\t' + data, file=fp)
+    line = f.readline()
+f.close()
+fp.close()
+
+f = open('dev.txt', 'r', encoding='utf-8')
+fp = open('new_dev.txt', 'w', encoding='utf-8')
+line = f.readline()
+while line:
+    line = line.rstrip()
+    temp_list = line.split('__label__')
+    tt = temp_list[0].strip().split(' ')
+    data = ''.join(tt)
+    class_name = temp_list[1].strip()
+    class_name_index = class_name_list.index(class_name)
+    print(str(class_name_index) + '\t' + data, file=fp)
+    line = f.readline()
+f.close()
+fp.close()
