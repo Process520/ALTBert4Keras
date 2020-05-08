@@ -32,7 +32,7 @@ def load_data(filename):
 
 
 # 加载数据集
-train_data = load_data('data/new_train.txt')
+train_data = load_data('data/train_augmented.txt')
 valid_data = load_data('data/new_dev.txt')
 test_data = load_data('data/new_test.txt')
 
