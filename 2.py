@@ -12,7 +12,7 @@ set_gelu('tanh')  # 切换gelu版本
 
 num_classes = 35
 maxlen = 62
-batch_size = 16
+batch_size = 64
 config_path = 'albert_tiny_google_zh_489k/albert_config.json'
 checkpoint_path = 'albert_tiny_google_zh_489k/albert_model.ckpt'
 dict_path = 'albert_tiny_google_zh_489k/vocab.txt'
